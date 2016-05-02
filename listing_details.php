@@ -8,18 +8,16 @@
 	<meta name="description" content="#"></meta>
 	<meta name="keywords" content="#"></meta>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/listing_details.css">
 	<script src="assets/jquery/main.js"></script>
-	<script src="assets/js/main.js"></script>
-	<link rel="stylesheet" href="./assets/css/datepicker.css">
-	<link rel="stylesheet" href="./assets/css/slider-ui.css">
-	<link rel="stylesheet" href="assets/css/main.css">
 	<script src="./assets/jquery/datepicker.js"></script>
+<script src="./assets/js/main.js"></script>
 	<script src="assets/js/date.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAgMXD4uLW8_1h48PFfPN4Tft4Pubi6jsM"></script>
 
 </head>
 
-<body onload="setcurdate2('<?php echo $_POST[" datefrom "]; ?>', '<?php echo $_POST["dateto "]; ?>')">
+<body onload="setcurdate2('<?php echo $_POST[" datefrom "]; ?>', '<?php echo $_POST["dateto "]; ?>');">
 	<nav class="bg-green" style=" top:0;">
 		<div class="container" style="margin-left: 0.45%;">
 			<div class="row">
@@ -30,13 +28,13 @@
 				</div>
 				<div class="lbord"></div>
 				<div class="destination">
-					<h2 class="white">
-						<?php echo $_POST["city"]; ?>
+					<h2 class="white" style="font-weight: 300;">
+						<?php echo "Umag Center"; ?>
 					</h2>
 				</div>
 				<div>
 					<div class="profilehead">
-						<p class="white">
+						<p class="white" style="font-weight: 300;">
 							<?php echo "John Doe"; //TODO display user name ?>
 							<?php echo $_GET["id"]; ?>
 						</p>
@@ -82,21 +80,21 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<img src="./assets/img/location.PNG" style="display: inline-block; vertical-align: bottom;" class="img-responsive" data-toggle="modal" data-target="#myMapModal">
-							<p style="display:inline-block; font-size: 16px; margin-top: 8px; margin-left: 12px;" class="grey">
+							<p style="display:inline-block; font-size: 18px; margin-top: 8px; margin-left: 12px;" class="grey" data-toggle="modal" data-target="#myMapModal">
 								<?php echo "202 Cummerata Avenue Apt. 964"; //TODO display adress?>
 							</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-3 col-sm-4 col-xs-4">
-							<img src="./assets/img/rumbig.PNG" style="margin-top: 20px; margin-left: 10px;" class="img-responsive">
-							<p class="grey" style="font-size: 16px;">
+							<img src="./assets/img/sofa.png" style="margin-top: 20px; margin-left: 14px;margin-bottom: 6px; max-height: 21px;" class="img-responsive">
+							<p class="grey" style="font-size: 18px;">
 								<?php echo 2; //TODO display num of rooms?> Rooms
 							</p>
 						</div>
 						<div class="col-md-3 col-sm-4 col-xs-4">
-							<img src="./assets/img/bedbig.PNG" style="margin-top: 20px; margin-left: 5px;" class="img-responsive">
-							<p class="grey" style="font-size: 16px;">
+							<img src="./assets/img/bed.png" style="margin-top: 20px; margin-left: 10px; margin-bottom: 5px;max-height: 23px;" class="img-responsive">
+							<p class="grey" style="font-size: 18px;">
 								<?php echo 4; //TODO display num of beds?> Beds
 							</p>
 						</div>
@@ -118,7 +116,7 @@
 					<form action="./payment.php" method="GET">
 						<div class="listingbox">
 							<div class="listingheader">
-								<p class="white" style="margin:0;">
+								<p class="white" style="margin:0;font-weight: 300;">
 									<span class="listingcost">
 									<?php echo 99; //TODO display price per night?>€
 								</span>
@@ -128,13 +126,13 @@
 							<div class="listingbody">
 								<div class="listingdate">
 									<div class="listingdatefrom">
-										<p class="green text-center" style="margin-bottom: 5px;font-weight: bold;font-size: 9px;">
+										<p class="green text-center" style="margin-bottom: 5px;font-weight: bold;font-size: 10px;">
 											CHECK IN
 										</p>
 										<input type='text' id='calendar' name="datefrom" style="display: none" />
 									</div>
 									<div class="listingdateto">
-										<p class="green text-center" style="margin-bottom: 5px;font-weight: bold;font-size: 9px;">
+										<p class="green text-center" style="margin-bottom: 5px;font-weight: bold;font-size: 10px;">
 											CHECK OUT
 										</p>
 										<input type='text' id='calendar2' name="dateto" style="display: none" />
@@ -142,29 +140,14 @@
 								</div>
 								<div class="listingguests">
 									<select class="lguests grey" name="guests" style="border: 0;">
-									<option value="1">1 Guest</option>
-									<option value="2">2 Guests</option>
-									<option value="3">3 Guests</option>
-									<option value="4">4 Guests</option>
-									<option value="5">5 Guests</option>
-									<option value="6">6 Guests</option>
-									<option value="7">7 Guests</option>
-									<option value="8">8 Guests</option>
-									<option value="9">9 Guests</option>
-									<option value="10">10 Guests</option>
-									<option value="11">11 Guests</option>
-									<option value="12">12 Guests</option>
-									<option value="13">13 Guests</option>
-									<option value="14">14 Guests</option>
-									<option value="15">15 Guests</option>
-									<option value="16">16+ Guests</option>
-								</select>
+										
+									</select>
 								<input style="display:none;" name="apartmentId" value=
 									<?php echo $_GET["id"]; ?>
 								>
 								</div>
 								<div class="listingbook">
-									<button class="listingbookbtn" type="submit">
+									<button class="listingbookbtn" type="submit" style="font-weight: 300;">
 									Book now
 								</button>
 								</div>
@@ -182,7 +165,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h3 class="text-center green">Individual copyright</h3>
+					<h3 class="text-center green" style="font-weight: normal;">Individual copyright</h3>
 					<p class="text-center green">All rights reserved</p>
 				</div>
 			</div>
@@ -190,6 +173,16 @@
 	</footer>
 </body>
 <script>
+	maxGuests(<?php echo 25; ?>)
+	function maxGuests(max){
+		for (i=1; i<=max; i++) {
+			if(i==1){
+				$("select").append("<option value="+i+">"+i+" Guest</option>");
+			}else{
+				$("select").append("<option value="+i+">"+i+" Guests</option>");	
+			}
+		}
+	}
 	var start = '<?php echo $_POST["datefrom"]; ?>';
 	var end = '<?php echo $_POST["dateto"]; ?>';
 	var d;

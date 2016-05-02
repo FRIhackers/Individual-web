@@ -6,17 +6,14 @@
 	<meta charset="utf-8">
 	<meta name="description" content="#"></meta>
 	<meta name="keywords" content="#"></meta>
-	<meta name="viewport" content="width=device-width, initial-scale=1">		
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/listings.css">
 	<script src="assets/jquery/main.js"></script>
-	<script src="assets/js/main.js"></script>
-	<link rel="stylesheet" href="./assets/css/datepicker.css">
- 	<link rel="stylesheet" href="./assets/css/slider-ui.css">
   <script src="assets/jquery/slider.js"></script>
-	<link rel="stylesheet" href="assets/css/main.css">
 	<script src="./assets/jquery/datepicker.js"></script>
 	<script src="assets/js/date.js"></script>
 </head>
-<body onload="setcurdate( new Date() , new Date(new Date().getTime() + 24 * 60 * 60 * 1000))">
+<body onload="setcurdate( new Date() , new Date(new Date().getTime() + 24 * 60 * 60 * 1000)); sendDb();">
 	<nav class="bg-green" style=" top:0;">
 		<div class="container" style="margin-left: 0.45%;">
 			<div class="row">
@@ -27,13 +24,13 @@
 				</div>
 				<div class="lbord"></div>
 				<div class="destination">
-					<h2 class="white">
-						<?php echo $_POST["city"]; ?>
+					<h2 class="white" style="font-weight: 300;">
+						<?php echo "Umag Center"; ?>
 					</h2>
 				</div>
 				<div>
 					<div class="profilehead">
-						<p class="white">
+						<p class="white" style="font-weight: 300;">
 							 John Doe
 						</p>
 						<img src="./assets/img/profile.jpg" class="img-responsive img-circle center">
@@ -48,7 +45,7 @@
 				<input name="city" value="<?php echo $_POST["city"] ?>" style="display:none;">
 				<div class="row">
 					<div class="col-sm-12">
-						<h3 style="font-size: 20px;">
+						<h3 style="font-size: 21px;font-weight: 400;">
 							Dates
 						</h3>
 					</div>
@@ -66,7 +63,7 @@
 								<input type='text' id='calendar2' name="dateto" style="display: none"/>
 							</div>
 							<div class="guestdiv">
-								<select class="guests grey" name="guests">
+								<select class="guests grey" name="guests" onchange="sendDb();">
 									<option value="1">1 Guest</option>
 									<option value="2">2 Guests</option>
 									<option value="3">3 Guests</option>
@@ -91,7 +88,7 @@
 				<div class="row">
 					<div class="col-sm-6 col-md-4">
 						<div class="col-sm-10" style="padding: 0">
-							<h3 style="font-size: 20px; margin-top: 40px; margin-bottom: 30px;">
+							<h3 style="font-size: 21px; margin-top: 40px; margin-bottom: 30px;font-weight: 400;">
 								Rooms
 							</h3>
 							<div id="slider-range-min"></div>
@@ -109,7 +106,7 @@
 					</div>
 					<div class="col-sm-6 col-md-4">
 						<div class="col-sm-10" style="padding: 0">
-							<h3 style="font-size: 20px; margin-top: 40px; margin-bottom: 30px;">
+							<h3 style="font-size: 21px; margin-top: 40px; margin-bottom: 30px;font-weight: 400;">
 								Beds
 							</h3>
 							<div id="slider-range"></div>
@@ -127,7 +124,7 @@
 					</div>
 					<div class="col-sm-6 col-md-4">
 						<div class="col-sm-10" style="padding: 0">
-							<h3 style="font-size: 20px; margin-top: 40px; margin-bottom: 30px;">
+							<h3 style="font-size: 21px; margin-top: 40px; margin-bottom: 30px;font-weight: 400;">
 								Price range/night
 							</h3>
 							<div id="slider-range1"></div>
@@ -151,96 +148,7 @@
 				</div>
 			</div>
 			<div class="results">
-				
 				<!-- REZULTATI-->
-				
-				<div class="row">
-					<div class="col-md-4 col-sm-6">
-						<div class="col-sm-12 box">
-							<div class="boxheader" style="background-image: url('./assets/img/boxbg.JPG');">
-								<div class="pricearea">
-									<p class="white">
-										199€ <span>per night</span>
-									</p>
-								</div>
-							</div>
-							<div class="boxbody">
-								<h4>Umag Center</h4>
-								<div class="inline">
-									<div>
-										<img src="./assets/img/rum.PNG" class="center img-responsive">
-										<h6>2 rooms</h6>
-									</div>
-									<div>
-										<img src="./assets/img/bed.PNG" class="center img-responsive">
-										<h6>5 beds</h6>
-									</div>
-								</div>
-							</div>
-							<div class="boxfooter">
-								<button type="submit" form="mainform" formaction="./listing_details.php?id=
-									<?php echo 1;  //?>
-								" class="green">VIEW DETAILS</button>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="col-sm-12 box">
-							<div class="boxheader" style="background-image: url('./assets/img/boxbg.JPG');">
-								<div class="pricearea">
-									<p class="white">
-										199€ <span>per night</span>
-									</p>
-								</div>
-							</div>
-							<div class="boxbody">
-								<h4>Umag Center</h4>
-								<p>2 bedroom flat in the city center, close to the beach</p>
-								<div class="inline">
-									<div>
-										<img src="./assets/img/rum.PNG" class="center img-responsive">
-										<h6>2 rooms</h6>
-									</div>
-									<div>
-										<img src="./assets/img/bed.PNG" class="center img-responsive">
-										<h6>5 beds</h6>
-									</div>
-								</div>
-							</div>
-							<div class="boxfooter">
-								<button type="submit" form="mainform" formaction="./listing_details.php?id=<?php echo 2; ?>" class="green">VIEW DETAILS</button>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="col-sm-12 box">
-							<div class="boxheader" style="background-image: url('./assets/img/boxbg.JPG');">
-								<div class="pricearea">
-									<p class="white">
-										199€ <span>per night</span>
-									</p>
-								</div>
-							</div>
-							<div class="boxbody">
-								<h4>Umag Center</h4>
-								<p>2 bedroom flat in the city center, close to the beach</p>
-								<div class="inline">
-									<div>
-										<img src="./assets/img/rum.PNG" class="center img-responsive">
-										<h6>2 rooms</h6>
-									</div>
-									<div>
-										<img src="./assets/img/bed.PNG" class="center img-responsive">
-										<h6>5 beds</h6>
-									</div>
-								</div>
-							</div>
-							<div class="boxfooter">
-								<button type="submit" form="mainform" formaction="./listing_details.php?id=<?php echo 3; ?>" class="green">VIEW DETAILS</button>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</section>
@@ -248,7 +156,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h3 class="text-center green">Individual copyright</h3>
+					<h3 class="text-center green" style="font-weight: normal;">Individual copyright</h3>
 					<p class="text-center green">All rights reserved</p>
 				</div>
 			</div>
@@ -257,6 +165,39 @@
 </body>
 
 	<script>
+	
+	function sendDb(){
+		var dateFrom = document.getElementsByName("datefrom")[0].value;
+		var dateTo = document.getElementsByName("dateto")[0].value;
+		var guests = document.getElementsByName("guests")[0].value;
+		var rooms = $('#slider-range-min').slider("option", "value");
+		var bedsMin = $('#slider-range').slider("option", "values")[0];
+		var bedsMax = $('#slider-range').slider("option", "values")[1];
+		var priceMin = $('#slider-range1').slider("option", "values")[0]*10;
+		var priceMax = $('#slider-range1').slider("option", "values")[1]*10;
+		var city = ($(".destination>h2").text()).trim();
+		var stringsend = "datefrom=" + dateFrom +"&dateto=" + dateTo +"&guests=" + guests +"&room=" + rooms +"&bedsMin="	+ bedsMin + "&bedsMax=" + bedsMax + "&priceMin=" + priceMin + "&priceMax=" + priceMax + "&city=" + city;
+		if (window.XMLHttpRequest) {
+    	xajax = new XMLHttpRequest();
+    } else {
+			//IE6, IE5
+			xajax = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xajax.open("POST", "listingDb.php", true);
+		xajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xajax.send(stringsend);
+		xajax.onreadystatechange = function() {
+			if (xajax.readyState == 4 && xajax.status == 200) {
+				console.log(xajax.responseText);
+				$(".results").html(xajax.responseText);
+				$(".box").css("height", $(".box").width() + "px");
+				$(".boxheader").css("height", $(".box").width() * 0.45 + "px");
+				$(".boxfooter").css("height", $(".box").width() * 0.11 + "px");
+				$(".boxbody").css("height", $(".box").width() * 0.44 + "px");
+			}
+		};
+		
+	}
 	$(document).ready(function(){
       $(".boxfooter button").css("margin-top", $(".boxfooter").height()/2-8.5+"px");
 			$(".boxfooter button").css("padding-right", $(".boxfooter").height()/2-8.5+"px");
@@ -269,7 +210,7 @@
 		showAnim: 'slideDown',
 		minDate: new Date(),
 		onSelect: function(dateText, inst) { 
-				var date = $(this).datepicker('getDate'),
+						var date = $(this).datepicker('getDate'),
 						h=new Date(date.getTime() + 24 * 60 * 60 * 1000);
 						day  = date.getDate(),  
 						month = date.getMonth() + 1,              
@@ -295,6 +236,7 @@
 						}
 						year =year.toString().substr(2,2);
 				$("#datefrom").text(day + '/' + month + '/' + year);
+				sendDb();
 		}
 	}).next("#date").attr('id', 'datefrom').addClass("grey");
 		
@@ -306,7 +248,8 @@
 		showAnim: 'slideDown',
 		minDate: new Date(new Date(new Date()).getTime() + 24 * 60 * 60 * 1000),
 		onSelect: function(dateText, inst) { 
-				var date = $(this).datepicker('getDate'),
+						
+						var date = $(this).datepicker('getDate'),
 						day  = date.getDate(),  
 						month = date.getMonth() + 1,              
 						year =  date.getFullYear();
@@ -318,11 +261,13 @@
 						}
 						year =year.toString().substr(2,2);
 				$("#dateto").text(day + '/' + month + '/' + year);
+			sendDb();
 		}
 	}).next("#date").attr('id', 'dateto').addClass("grey");
 		
 		$('#calendar').datepicker("setDate", new Date(new Date()));
 		$('#calendar2').datepicker("setDate", new Date(new Date(new Date().getTime() + 24 * 60 * 60 * 1000)));
 		$(".guests").val(<?php echo $_POST["guests"]; ?>);
+		
 	</script>
 </html>
