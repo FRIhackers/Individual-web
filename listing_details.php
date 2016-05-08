@@ -129,13 +129,17 @@
 										<p class="green text-center" style="margin-bottom: 5px;font-weight: bold;font-size: 10px;">
 											CHECK IN
 										</p>
-										<input type='text' id='calendar' name="datefrom" style="display: none" />
+										<div style="font-size: 16px;font-weight: 300;">
+											<input type='text' id='calendar' name="datefrom" style="display: none" />
+										</div>
 									</div>
-									<div class="listingdateto">
+									<div class="listingdateto" style="font-size: 16px;font-weight: 300;">
 										<p class="green text-center" style="margin-bottom: 5px;font-weight: bold;font-size: 10px;">
 											CHECK OUT
 										</p>
-										<input type='text' id='calendar2' name="dateto" style="display: none" />
+										<div style="font-size: 16px;font-weight: 300;">
+											<input type='text' id='calendar2' name="dateto" style="display: none" />
+										</div>
 									</div>
 								</div>
 								<div class="listingguests">
